@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI API Example</title>
+    <script>
+        function fetchOpenAIResult() {
+            fetch('YOUR_PHP_SCRIPT.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result').innerText = data;
+                });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fetchOpenAIResult()">Get OpenAI Result</button>
+    <div id="result"></div>
+</body>
+</html>

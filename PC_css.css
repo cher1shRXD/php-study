@@ -1,0 +1,1028 @@
+html {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+#screen {
+    width: 100%;
+    height: 100%;
+    height: fill-available;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+}
+#canvas {
+    width: 100%;
+    height: 100%;
+    height: fill-available;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.KR_font {
+    font-family: 'Nanum Pen Script', sans-serif;
+}
+#controller {
+    width: 100%;
+    height: 7%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px 20px 0px 0px;
+}
+#control_btn {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#control_btn > img {
+    width: 20%;
+    height: 100%;
+    margin-left: 10%;
+    cursor: pointer; 
+}
+#logout_btn {
+    width: min-content;
+    min-width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logout {
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 3rem;
+    margin-left: 5%;
+}
+#print_id_H {
+    font-size: 3rem;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}  
+#header {
+    width: 100%;
+    height: 10.3%;
+    position: absolute;
+    top: 6.8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: white 2px solid;
+    background-image: url('hd_bg.jpg');
+    z-index: 1000;
+}
+#header > img {
+    width: 20%;
+    height: 95%;
+    cursor: pointer;
+}
+#header > p {
+    color: white;
+    font-size: 10rem;
+    font-family: 'Gasoek One', sans-serif;
+    margin: 0;
+    margin-left: 2%;
+    cursor: pointer; 
+    -webkit-text-stroke-width: 0.5rem;
+	-webkit-text-stroke-color: black;
+}
+.snowflake {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+/* 오른쪽 아래로 떨어지는 애니메이션
+@keyframes snowfall1 {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 92%;
+        transform: translate(1px, 0);
+    }
+}
+
+왼쪽 아래로 떨어지는 애니메이션
+@keyframes snowfall2 {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 92%;
+        transform: translate(-1px, 0);
+    }
+}
+
+.snowflake:nth-child(2n) {
+    animation-name: snowfall1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.snowflake:nth-child(3n) {
+    animation-name: snowfall2;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.snowflake:nth-child(5n) {
+    filter: blur(5px);
+} */
+#main {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    z-index: 3;
+    bottom: 8%;
+    padding-bottom: 1%;
+    border-top: solid 2px silver;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    background-size : cover;
+    /* background-image: url(./bg.jpg); */
+}   
+#main::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+#background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    border-radius: 20px 20px 20px 20px;
+    /* filter: blur(5px); */
+}
+#sen {
+    width: 100%;
+    height: min-content;
+    min-height: 5%;
+    border-bottom: solid 2px goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('sen_bg.jpg');
+}
+#sen > p {
+    color: black;
+    font-size: 3.5rem;
+    font-family: 'Indie Flower', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+.take_info {
+    display: none;
+    appearance: none;
+}
+.sendID {
+    display: none;
+    appearance: none;
+}
+.posts {
+    width: 90%;
+    height: min-content;
+    border: solid 3px black;
+    margin-top: 4%;
+    margin-bottom: 1.5%;
+    border-radius: 50px 50px 50px 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+.main-box {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.picture_section {
+    width: 80%;
+    height: 88%;
+    margin: 2%;
+}
+.picture_section > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+}
+.picture_section > video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+}
+.word_section {
+    width: 80%;
+    height: min-content;
+    min-height: 88%;
+}
+.title-box {
+    width: 90%;
+    padding-left: 5%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: black 1px solid;
+}
+.title {
+    margin: 0;
+    font-size: 6rem;
+    color: black;
+}
+.paragraph-box {
+    width: 100%;
+    height: 60%;
+}
+.main_content {
+    font-size: 5rem;
+    margin: 0;
+    color: black;
+}
+.interaction {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+}
+.interaction > img {
+    width: 10%;
+    height: 100%;
+    margin-left: 5%;
+    cursor: pointer; 
+}
+.datetime {
+    font-size: 3rem;
+    margin-right: 5%;
+    color: black;
+}
+.comments_num , .likes_num {
+    font-size: 5rem;
+    margin-left: 2%;
+    color: black;
+}
+.user_id {
+    width: 100%;
+    height: 30%;
+    border-bottom: solid black 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_id > p {
+    color: black;
+    font-size: 7rem;
+    margin: 0;
+    margin-left: 5%;
+    text-align: center;
+    margin-right: 3%;
+    cursor: pointer; 
+}
+.followBtn {
+    margin: 0;
+    padding: 0;
+    margin-right: 3%;
+    width: 10%;
+    cursor: pointer; 
+}
+/* 메뉴바 */
+#menubar {
+    width: 100%;
+    height: 8%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: white 2px solid;
+    z-index: 1000;
+    border-radius: 0px 0px 20px 20px;
+}
+#menubar > img {
+    width: 17%;
+    height: 90%;
+    cursor: pointer; 
+}
+/* 검색 페이지 */
+#search_area {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#search_box {
+    width: 80%;
+    font-size: 4rem;
+    border-radius: 50px 50px 50px 50px;
+    border: gray solid 4px;
+    padding-left: 2%;
+    font-family: 'Nanum Pen Script',sans-serif;
+}
+#search_Btn {
+    font-size: 5rem;
+    margin-left: 2%;
+    font-family: 'Nanum Pen Script', sans-serif;
+    padding: 0 2%;
+}
+#search {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: gray 2px solid;
+}
+#chat_box {
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+#chat_box::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+/* 프로필 페이지 */
+#profile {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+#profile::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+#info_area {
+    width: 100%;
+    padding-left: 3%;
+    height: 25%;
+    top: 0;
+    left: 0;
+    border-bottom: 2px black solid;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+#info_area > .followBtn {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 80%;
+    z-index: 1000;
+    cursor: pointer; 
+}
+#btn-grp {
+    width: 60%;
+    height: 70%;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 2%;
+    flex-direction: column;
+    margin-left: 35%;
+}
+#btn-grp > button {
+    font-size: 3rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+    padding: 0% 2%;
+    margin-left: 2%;
+    z-index: 1000;
+}
+#my_post {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+#profile_id {
+    margin: 0;
+    font-size: 12rem;
+    display: inline;
+    margin-right: 1%;
+    margin-bottom: 8%;
+    position: absolute;
+    z-index: 1;
+}
+#following_num {
+    margin: 0;
+    font-size: 3.5rem;
+    margin-right: 5%;
+    display: inline;
+    z-index: 3;
+}
+#follower_num {
+    margin: 0;
+    font-size: 3.5rem;
+    margin-right: 5%;
+    display: inline;
+    z-index: 3;
+}
+#fl_nums {
+    width: 100%;
+    height: 30%;
+    z-index: 3;
+}
+.my-pic {
+    width: 100%;
+    height: 70%;
+}
+.MyPost {
+    width: 18rem;
+    height: 25rem;
+    border: 1px solid gray;
+    margin: 0.1%;
+    background-color: gray;
+}
+.my-pic > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85%;
+}
+.my-pic > video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.MyPost > .interaction {
+    justify-content: flex-start;
+    margin: 0;
+    height: 10%;
+}
+.delete_btn {
+    background-color: gray;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer; 
+}
+/* 로그인 페이지 */
+#login_form {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    /* padding-bottom: 2%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}   
+#login_form::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}    
+#login_form > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#login_form > form > p {
+    font-size: 7rem;
+    font-family: 'Vina Sans', sans-serif;
+    text-align: center;
+    text-shadow: -5px 0 #000, 0 5px #000, 5px 0 #000, 0 -5px #000;
+    color: white;
+}
+#login_form > form > div {
+    width: 80%;
+    height: 70%;
+}
+#login_form > form > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#login_form > form > div > input {
+    width: 100%;
+    margin-bottom: 3%;
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+}
+
+#login_form > form > div > label {
+    align-self: flex-start;
+    font-size: 5rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+    display: inline;
+}
+#login_form > form > div > button {
+    font-size: 4rem;
+    padding: 0% 5%;
+    font-family: 'Gasoek One', sans-serif;
+}
+#login_form > form > div > a {
+    text-decoration: none;
+    color: blue;
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 5rem;
+}
+#login_form > form > div > a:hover {
+    text-decoration: none;
+    color: blue;
+}
+#login_form > form > div > a:visited {
+    text-decoration: none;
+    color: blue;
+}
+#check_div {
+    margin-bottom: 2%;
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#check_div > input {
+    width: 14%;
+    height: 100%;
+    margin-right: 5%;
+}
+#check_div > label {
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 5rem;
+}
+/* 회원가입페이지 */
+#register_form {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}   
+#register_form::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+#register_form > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+}
+#register_form > form > p {
+    font-size: 7rem;
+    font-family: 'Vina Sans', sans-serif;
+    text-align: center;
+    text-shadow: -5px 0 #000, 0 5px #000, 5px 0 #000, 0 -5px #000;
+    color: white;
+}
+#register_form > form > div {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#register_form > form > div > input {
+    width: 100%;
+    margin-bottom: 1%;
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+}
+#register_form > form > div > label {
+    align-self: flex-start;
+    font-size: 5rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+}
+#register_form > form > div > button {
+    padding: 0% 5%;
+    font-size: 5rem;
+    font-family: 'Gasoek One', sans-serif;
+    margin-top: 5%;
+}
+#register_form > form > div > a {
+    text-decoration: none;
+    color: blue;
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 5rem;
+}
+#register_form > form > div > a:hover {
+    text-decoration: none;
+    color: blue;
+}
+#register_form > form > div > a:visited {
+    text-decoration: none;
+    color: blue;
+}
+/* 정보수정 */
+#edit_form {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    /* padding-bottom: 2%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+#edit_form::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+#edit_form > form {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#edit_form > form > p {
+    font-size: 8rem;
+}
+#new_info_area {
+    width: 90%;
+    height: 40%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+#new_info_area > input {
+    width: 100%;
+    margin-bottom: 2%;
+    font-size: 4rem;
+    border: black 4px solid;
+}
+#certify_user_area {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+#certify_pw {
+    width: 95%;
+    font-size: 3rem;
+    border: gray 4px solid;
+}
+#edit_form > form > button {
+    font-size: 5rem;
+    font-family: 'Nanum Pen Script' , sans-serif;
+}
+/* 포스팅페이지 */
+#making_page {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 8%;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+#making_page::-webkit-scrollbar {
+    display: none;
+}
+#making_form {
+    width: 90%;
+    height: 100%;
+}
+#making_form > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.content-picture {
+    width: 90%;
+    height: min-content;
+    min-height: 30%;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content-words {
+    width: 90%;
+    height: min-content;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.input_title {
+    width: 100%;
+    border-radius: 50px 50px 50px 50px;
+    border: 5px solid gray;
+    padding-left: 2%;
+    font-size: 5rem;
+}
+#input_content {
+    resize: none;
+    width: 100%;
+    height: 70%;
+    margin-top: 3%;
+    font-size: 4rem;
+    padding: 2%;
+    border: 5px solid gray;
+}
+#textCount {
+    font-size: 5rem;
+    width: 50%;
+    margin-bottom: 2%;
+}
+#posting {
+    padding: 0 2%;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 5%;
+    align-self: flex-end;
+    font-family: 'Nanum Pen Script' , sans-serif;
+}
+#image_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+#uploaded-img {
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+}
+#uploaded-video {
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+}
+#delete_pic {
+    width: 10%;
+    height: 11%;
+    z-index: 3;
+    align-self: flex-start;
+    margin-left: 5%;
+    cursor: pointer; 
+}
+#file {
+    display: none;
+}
+#pic_up {
+    width: 20%;
+    cursor: pointer; 
+}
+#no {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+}
+#no > img {
+    width: 30%;
+    height: 35%;
+    margin-bottom: 2%;
+}   
+#no > p {
+    font-size: 400%;
+    color: #b3b3b3;
+    z-index: -1;
+}
+/* 알림창 */
+#notice_box {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    z-index: 20000;
+    background-color: white;
+    border: 3px solid black;
+    bottom: 5%;
+    right: 30%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#notice_close {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+}
+#notice_close > img {
+    width: 15%;
+    height: 90%;
+    z-index: 2001;
+    cursor: pointer; 
+}
+#notice_close > p {
+    font-size: 4rem;
+}
+#notice_cont {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    z-index: 2000;
+}
+#notice_cont::-webkit-scrollbar {
+    display: none;
+}
+.noti_cont {
+    width: 95%;
+    height: min-content;
+    border-bottom: 1px solid gray;
+}
+.noti_cont > p {
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+}
+.del_alert {
+    width: 4rem;
+    height: 5rem;
+    cursor: pointer; 
+}
+.comment_box {
+    width: 100%;
+    height: 70rem;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.comment_close {
+    width: 80%;
+    height: 7rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+}
+.comment_close > img {
+    width: 10%;
+    height: 100%;
+    margin-right: 5%;
+    cursor: pointer; 
+}
+.comment_close > p {
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script', sans-serif;
+    margin: 0;
+    color: black;
+}
+.comment_input {
+    width: 80%;
+    height: 13rem;
+    margin-top: 11%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 3000;
+}
+.input_comm_box {
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script' , sans-serif;
+    background: none;
+    color: black;
+}
+.input_comm_box:focus {
+    outline: none;
+}
+.comment_input > button {
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script' , sans-serif;
+    background-color: whitesmoke;
+    border-color: black;
+    color: black;
+}
+.comment_main {
+    width: 100%;
+    height: 50rem;
+    margin-top: 25rem;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    border-top: 1px solid black;
+}
+.comment_main::-webkit-scrollbar {
+    display: none;
+}
+.comment {
+    width: 100%;
+    height: min-content;
+    min-height: 15rem;
+    border-bottom: 0.5px solid gray;
+}
+.comment:last-child {
+    border: none;
+}
+.comment:first-child {
+    margin-top: 2rem;
+}
+.comment > p {
+    font-size: 4rem;
+    font-family: 'Nanum Pen Script',sans-serif;
+    margin: 0;
+    color: black;
+}
+.comment_main > p {
+    font-size: 5rem;
+    font-family: 'Nanum Pen Script',sans-serif;
+    margin: 0;
+}
+.comment_interaction {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.comment_interaction > img {
+    width: 7%;
+    height: 90%;
+    cursor: pointer; 
+}
